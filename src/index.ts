@@ -156,6 +156,28 @@ export class Amplitude {
   }
 
   /**
+   * If your app has its own login system that you want to track users with,
+   * you can set the userId.
+   *
+   * @param userId
+   * @param startNewSession
+   */
+  setUserId(userId: string | null, startNewSession: boolean = false): Promise<boolean> {
+    return AmplitudeReactNative.setUserId(this.instanceName, userId, startNewSession);
+  }
+
+  /**
+   * If your app has its own login system that you want to track users with,
+   * you can set the userId.
+   *
+   * @param userId
+   * @param startNewSession
+   */
+  setUserId(userId: string | null, startNewSession: boolean = false): Promise<boolean> {
+    return AmplitudeReactNative.setUserId(this.instanceName, userId, startNewSession);
+  }
+
+  /**
    * Customize the destination for server url.
    *
    * @param serverUrl

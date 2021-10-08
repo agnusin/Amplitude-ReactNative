@@ -177,6 +177,15 @@ public class AmplitudeReactNativeModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
+    public void setUserId(String instanceName, String userId, Boolean startNewSession, Promise promise) {
+        AmplitudeClient client = Amplitude.getInstance(instanceName);
+        synchronized (client) {
+            client.setUserId(userId, startNewSession);
+            promise.resolve(true);
+        }
+    }
+
+    @ReactMethod
     public void setServerUrl(String instanceName, String serverUrl, Promise promise) {
         AmplitudeClient client = Amplitude.getInstance(instanceName);
         synchronized (client) {
