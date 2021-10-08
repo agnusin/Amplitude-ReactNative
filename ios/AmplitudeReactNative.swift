@@ -118,15 +118,6 @@ class ReactNative: NSObject {
     @objc
     func setUserId(_ instanceName: String,
                    userId: String,
-                   resolver resolve: RCTPromiseResolveBlock,
-                   rejecter reject: RCTPromiseRejectBlock) -> Void {
-        Amplitude.instance(withName: instanceName).setUserId(userId)
-        resolve(true)
-    }
-
-    @objc
-    func setUserId(_ instanceName: String,
-                   userId: String,
                    startNewSession: Bool = false,
                    resolver resolve: RCTPromiseResolveBlock,
                    rejecter reject: RCTPromiseRejectBlock) -> Void {
